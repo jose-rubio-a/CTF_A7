@@ -67,4 +67,4 @@ with DAG(
     process_data_task = PythonOperator(task_id="process_data", python_callable=process_data)
     store_data_task = PythonOperator(task_id="store_data", python_callable=store_data)
 
-    get_data >> process_data >> store_data
+    get_data_task >> process_data_task >> store_data_task
